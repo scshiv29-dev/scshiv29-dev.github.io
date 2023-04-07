@@ -36,13 +36,16 @@ const projects = [
   // Add more projects as needed
 ];
 
-const ProjectCard = ({ project }) => {
-  const fullScreen = (e,id) =>{
-    e.preventDefault()
-    let elem = document.getElementById(`iframe-${id}`);
+const ProjectCard = ({ project }: any) => {
+  const fullScreen = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    id: any
+  ) => {
+    e.preventDefault();
+    let elem: any = document.getElementById(`iframe-${id}`);
 
     if (!document.fullscreenElement) {
-      elem.requestFullscreen().catch((err) => {
+      elem.requestFullscreen().catch((err: { message: any; name: any }) => {
         alert(
           `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`
         );
@@ -50,30 +53,51 @@ const ProjectCard = ({ project }) => {
     } else {
       document.exitFullscreen();
     }
-  }
+  };
   return (
     <div className="border-2 border-gray-300 flex  flex-col gap-y-4 rounded-md p-4 h-full">
       <h2 className="text-xl font-bold ">{project.title}</h2>
       <p className="text-gray-100 ">{project.description}</p>
       <div className="flex flex-wrap">
-        {project.stack.map((item, index) => (
-          <span
-            key={index}
-            className="bg-gray-200 text-gray-700 rounded-md px-2 py-1 mr-2 "
-          >
-            {item}
-          </span>
-        ))}
+        {project.stack.map(
+          (
+            item:
+              | string
+              | number
+              | boolean
+              | React.ReactElement<
+                  any,
+                  string | React.JSXElementConstructor<any>
+                >
+              | React.ReactFragment
+              | React.ReactPortal
+              | null
+              | undefined,
+            index: React.Key | null | undefined
+          ) => (
+            <span
+              key={index}
+              className="bg-gray-200 text-gray-700 rounded-md px-2 py-1 mr-2 "
+            >
+              {item}
+            </span>
+          )
+        )}
       </div>
 
-        <iframe
-          src={project.url}
-          title={project.title}
-          allowFullScreen
-          id={`iframe-${project.id}`}
-          className="rounded-md aspect-video  w-[30rem]"
-        />
-        <button className="bg-lime-500 text-white rounded-md px-2 py-1  w-1/2" onClick={e=>fullScreen(e,project.id)}>View in Full Screen</button>
+      <iframe
+        src={project.url}
+        title={project.title}
+        allowFullScreen
+        id={`iframe-${project.id}`}
+        className="rounded-md aspect-video  w-[30rem]"
+      />
+      <button
+        className="bg-lime-500 text-white rounded-md px-2 py-1  w-1/2"
+        onClick={(e) => fullScreen(e, project.id)}
+      >
+        View in Full Screen
+      </button>
     </div>
   );
 };
