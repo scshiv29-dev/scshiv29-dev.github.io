@@ -52,7 +52,7 @@ const ProjectCard = ({ project }) => {
     }
   }
   return (
-    <div className="border-2 border-gray-300 flex flex-col gap-y-4 rounded-md p-4 h-full">
+    <div className="border-2 border-gray-300 flex  flex-col gap-y-4 rounded-md p-4 h-full">
       <h2 className="text-xl font-bold ">{project.title}</h2>
       <p className="text-gray-100 ">{project.description}</p>
       <div className="flex flex-wrap">
@@ -80,7 +80,7 @@ const ProjectCard = ({ project }) => {
 
 const Projects = () => {
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 my-10 justify-center container mx-auto">
+    <div className="grid lg:grid-cols-2 snap-start snap-always w-full h-screen grid-cols-1 gap-4 my-10 justify-center container mx-auto">
       {projects.map((project) => (
         <div key={project.id} className="lg:w-full w-1/2">
           <ProjectCard project={project} />

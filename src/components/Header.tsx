@@ -11,7 +11,7 @@ function Header() {
   }
 
   return (
-    <header className="py-4 bg-base-200">
+    <header className="py-4 bg-base-200 snap-start snap-always">
       <div className="container flex items-center justify-between mx-auto">
         <Link href="/" className="text-xl font-bold text-gray-100 ">
           <span className="name" onMouseEnter={handleNameHover}></span> Shivam
