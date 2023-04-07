@@ -106,7 +106,7 @@ const ProjectCard = ({ project }: any) => {
 
 const Projects = () => {
   return (
-    <div className="grid lg:grid-cols-2  w-full mt-10 section  grid-cols-1 gap-4  h-screen  container mx-auto" id="project">
+    <div className="grid lg:grid-cols-2  w-full place-items-center section  grid-cols-1 gap-4  h-screen  container mx-auto" id="project">
       {projects.map((project) => (
         <div key={project.id} className="lg:w-full w-1/2">
           <ProjectCard project={project} />

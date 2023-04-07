@@ -14,12 +14,11 @@ export default function Home() {
     <>
     <Scroll />
     <div className=" w-full scroll-smooth overflow-none snap-y snap-mandatory  relative ">
-      <Header />
-      
+      {/* <Header /> */}
       <Hero />
       <Projects />
-
-
+      <Hero />
+      <Projects />
     </div>
     </>
   );
