@@ -37,37 +37,52 @@ const projects = [
 ];
 
 const ProjectCard = ({ project }) => {
+  const fullScreen = (e,id) =>{
+    e.preventDefault()
+    let elem = document.getElementById(`iframe-${id}`);
+
+    if (!document.fullscreenElement) {
+      elem.requestFullscreen().catch((err) => {
+        alert(
+          `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`
+        );
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
   return (
-    <div className="border-2 border-gray-300 rounded-md p-4  w-full h-full">
-      <h2 className="text-xl font-bold mb-2">{project.title}</h2>
-      <p className="text-gray-100 mb-4">{project.description}</p>
+    <div className="border-2 border-gray-300 flex flex-col gap-y-4 rounded-md p-4 h-full">
+      <h2 className="text-xl font-bold ">{project.title}</h2>
+      <p className="text-gray-100 ">{project.description}</p>
       <div className="flex flex-wrap">
         {project.stack.map((item, index) => (
           <span
             key={index}
-            className="bg-gray-200 text-gray-700 rounded-md px-2 py-1 mr-2 mb-2"
+            className="bg-gray-200 text-gray-700 rounded-md px-2 py-1 mr-2 "
           >
             {item}
           </span>
         ))}
       </div>
-      <div className="aspect-w-16 aspect-h-9 mt-4">
+
         <iframe
           src={project.url}
           title={project.title}
           allowFullScreen
-          className="rounded-md"
+          id={`iframe-${project.id}`}
+          className="rounded-md aspect-video  w-[30rem]"
         />
-      </div>
+        <button className="bg-lime-500 text-white rounded-md px-2 py-1  w-1/2" onClick={e=>fullScreen(e,project.id)}>View in Full Screen</button>
     </div>
   );
 };
 
 const Projects = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center container mx-auto">
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 my-10 justify-center container mx-auto">
       {projects.map((project) => (
-        <div key={project.id} className="w-full sm:w-1/2">
+        <div key={project.id} className="lg:w-full w-1/2">
           <ProjectCard project={project} />
         </div>
       ))}
