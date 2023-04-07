@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="hero w-full h-screen bg-base-200 snap-start snap-always">
+    <div className="hero w-full h-screen bg-base-200 snap-center snap-always">
       <div className="hero-content flex-col lg:flex-row">
         <img src="/me.png" className="max-w-sm rounded-lg shadow-2xl" />
         <div>

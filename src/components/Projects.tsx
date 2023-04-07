@@ -55,7 +55,7 @@ const ProjectCard = ({ project }: any) => {
     }
   };
   return (
-    <div className="border-2 border-gray-300 flex  flex-col gap-y-4 rounded-md p-4 h-full">
+    <div className="border-2 border-gray-300 flex h-[26rem]  flex-col gap-y-4 rounded-md p-4 ">
       <h2 className="text-xl font-bold ">{project.title}</h2>
       <p className="text-gray-100 ">{project.description}</p>
       <div className="flex flex-wrap">
@@ -90,7 +90,7 @@ const ProjectCard = ({ project }: any) => {
         title={project.title}
         allowFullScreen
         id={`iframe-${project.id}`}
-        className="rounded-md aspect-video  w-[30rem]"
+        className="rounded-md aspect-video  w-[20rem]"
       />
       <button
         className="bg-lime-500 text-white rounded-md px-2 py-1  w-1/2"
@@ -104,7 +104,7 @@ const ProjectCard = ({ project }: any) => {
 
 const Projects = () => {
   return (
-    <div className="grid lg:grid-cols-2 snap-start snap-always w-full h-screen grid-cols-1 gap-4 my-10 justify-center container mx-auto">
+    <div className="grid lg:grid-cols-2 snap-center snap-always w-full  grid-cols-1 gap-4 my-10 justify-center container mx-auto">
       {projects.map((project) => (
         <div key={project.id} className="lg:w-full w-1/2">
           <ProjectCard project={project} />
