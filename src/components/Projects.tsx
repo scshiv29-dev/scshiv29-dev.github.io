@@ -1,3 +1,4 @@
+import { log } from "console";
 import React from "react";
 
 const projects = [
@@ -35,7 +36,7 @@ const projects = [
   },
   // Add more projects as needed
 ];
-
+const aos=["fade-right","fade-left","fade-right","fade-left"]
 const ProjectCard = ({ project }: any) => {
   const fullScreen = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -54,8 +55,9 @@ const ProjectCard = ({ project }: any) => {
       document.exitFullscreen();
     }
   };
+
   return (
-    <div className="border-2 border-gray-300 flex h-[26rem]  flex-col gap-y-4 rounded-md p-4 ">
+    <div className="border-2 border-gray-300 flex h-[26rem]   flex-col justify-between gap-y-4 rounded-md p-4 " data-aos={aos[project.id-1]}  data-aos-duration="1500">
       <h2 className="text-xl font-bold ">{project.title}</h2>
       <p className="text-gray-100 ">{project.description}</p>
       <div className="flex flex-wrap">
@@ -104,7 +106,7 @@ const ProjectCard = ({ project }: any) => {
 
 const Projects = () => {
   return (
-    <div className="grid lg:grid-cols-2 snap-center snap-always w-full  grid-cols-1 gap-4 my-10 justify-center container mx-auto">
+    <div className="grid lg:grid-cols-2  w-full mt-10   grid-cols-1 gap-4  h-screen  container mx-auto" id="project">
       {projects.map((project) => (
         <div key={project.id} className="lg:w-full w-1/2">
           <ProjectCard project={project} />

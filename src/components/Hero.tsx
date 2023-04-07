@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="hero w-full h-screen bg-base-200 snap-center snap-always">
+    <div className="hero w-full h-screen bg-base-200 " id="hero">
       <div className="hero-content flex-col lg:flex-row">
-        <img src="/me.png" className="max-w-sm rounded-lg shadow-2xl" />
-        <div>
+        <img src="/me.png" className="max-w-sm rounded-lg " data-aos="fade-right" data-aos-duration="1500"/>
+        <div data-aos="fade-left" data-aos-duration="1500">
           <div className="flex flex-row space-x-3">
             <h1 className="text-5xl font-bold">Welcome </h1>
             <h1 className="text-5xl font-bold">to </h1>

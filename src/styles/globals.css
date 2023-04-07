@@ -9,7 +9,7 @@
 }
 body {
   font-family: 'Virgil';
-
+  overflow: none;
 }
 body::-webkit-scrollbar{
   display: none;
