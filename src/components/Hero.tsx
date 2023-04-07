@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div className="hero w-full h-screen bg-base-200 " id="hero">
+    <div className="hero w-full h-screen bg-base-200 section " id="hero">
       <div className="hero-content flex-col lg:flex-row">
         <img src="/me.png" className="max-w-sm rounded-lg " data-aos="fade-right" data-aos-duration="1500"/>
         <div data-aos="fade-left" data-aos-duration="1500">

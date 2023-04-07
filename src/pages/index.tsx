@@ -11,6 +11,7 @@ export default function Home() {
   }, []);
   return (
     <>
+      <Scroll />
       <div className=" scroll-auto w-full h-screen scroll-smooth  relative ">
         <Header />
         <Hero />
