@@ -13,7 +13,6 @@ export default function Home() {
     <>
       <Scroll />
       <div className=" scroll-auto w-full h-screen scroll-smooth  relative ">
-        <Header />
         <Hero />
         <Projects />
       </div>
