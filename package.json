@@ -27,6 +27,7 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
-    "@types/animejs": "^3.1.7"
+    "@types/animejs": "^3.1.7",
+    "@types/aos": "^3.0.4"
   }
 }

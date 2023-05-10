@@ -27,7 +27,7 @@ var upSection = () => {
   }
 }
 
-var scrollToSection = (section) => {
+var scrollToSection = (section: number) => {
   anime({
     targets: scrollElement,
     scrollTop: (section) * window.innerHeight,
@@ -81,7 +81,7 @@ window.addEventListener('wheel', function(e) {
   }
 }, false)
 
-var initialY = null
+var initialY: number | null = null
 
 window.addEventListener('touchstart', function(e) {
   initialY = e.touches[0].clientY
@@ -112,7 +112,7 @@ window.addEventListener('touchmove', function(e) {
     }
   }
   
-  initialy = null
+  initialY = null
   
 }, {passive: false})
 
